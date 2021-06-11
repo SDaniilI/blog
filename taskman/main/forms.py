@@ -15,4 +15,12 @@ class TaskForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Введите описание',
             }),
+            "author": Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Введите описание',
+            }),
+            "tag": Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Введите описание',
+            }),
         }
