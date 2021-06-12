@@ -5,7 +5,7 @@ class Task(models.Model):
     title = models.CharField('Название', max_length=50)
     task = models.TextField('Описание')
     author = models.CharField('Автор', max_length=25)
-    tag = models.CharField('Теги', max_length=25)
+    tag = models.ForeignKey('Tag', on_delete=models.PROTECT())
 
     def __str__(self):
         return self.title
@@ -15,5 +15,12 @@ class Task(models.Model):
         verbose_name_plural = 'Посты'
 
 
-# class Tags:
-#     name = ...
+class Tag(models.Model):
+    name = models.CharField('Название', max_length=25)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Тег'
+        verbose_name_plural = 'Теги'

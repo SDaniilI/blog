@@ -22,8 +22,6 @@ def create(request):
         else:
             error = 'Форма была не  верной'
 
-
-
     form = TaskForm()
     context = {
         'form': form,
