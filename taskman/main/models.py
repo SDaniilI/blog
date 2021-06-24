@@ -1,11 +1,11 @@
 from django.db import models
 
 
-class Task(models.Model):
+class Post(models.Model):
     title = models.CharField('Название', max_length=50)
-    task = models.TextField('Описание')
+    post = models.TextField('Описание')
     author = models.CharField('Автор', max_length=25)
-    tag = models.ForeignKey('Tag', on_delete=models.PROTECT())
+    tag = models.ForeignKey('Tag', on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return self.title
@@ -16,7 +16,7 @@ class Task(models.Model):
 
 
 class Tag(models.Model):
-    name = models.CharField('Название', max_length=25)
+    name = models.CharField('Название', max_length=25, db_index=True)
 
     def __str__(self):
         return self.name

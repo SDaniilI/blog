@@ -1,26 +1,23 @@
-from .models import Task
+from .models import Post, Tag
 from django.forms import ModelForm, TextInput, Textarea
+from django import forms
 
 
-class TaskForm(ModelForm):
+class PostForm(ModelForm):
     class Meta:
-        model = Task
-        fields = ["title", "task", "author", "tag"]
+        model = Post
+        fields = ["title", "post", "author", "tag"]
         widgets = {
             "title": TextInput(attrs={
                  'class': 'form-control',
                  'placeholder': 'Введите название',
             }),
-            "task": Textarea(attrs={
+            "post": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Введите описание',
             }),
             "author": TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Введите автора поста',
-            }),
-            "tag": TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Введите тег',
             }),
         }

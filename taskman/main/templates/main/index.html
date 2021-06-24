@@ -7,12 +7,12 @@
 
 {% block content %}
     <h1>Мои посты</h1>
-    {%if tasks%}
-        {%for el in tasks%}
+    {%if posts%}
+        {%for el in posts%}
             <div class="alert alert-warning mt-2">
                 <h3>{{ el.title }}</h3>
                 <p>{{ el.author }}</p>
-                <p>{{ el.task }}</p>
+                <p>{{ el.post }}</p>
                 <p>{{ el.tag }}</p>
             </div>
         {% endfor %}

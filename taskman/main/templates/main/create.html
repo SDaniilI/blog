@@ -10,10 +10,11 @@
     <form method="post">
         {% csrf_token %}
         {{ form.title }}<br>
-        {{ form.task }}<br>
+        {{ form.post }}<br>
         {{ form.author }}<br>
         {{ form.tag }}<br>
         <button type="submit" class="btn btn-success">Добавить</button>
         <span>{{ error }}</span>
+        <span>{{ asdasd }}</span>
     </form>
 {% endblock %}
